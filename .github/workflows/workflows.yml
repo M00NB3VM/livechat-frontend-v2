@@ -1,0 +1,39 @@
+name: Workflow
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+
+    runs-on: ${{matrix.os}
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: "Setting up Node v16 in workflow"
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - run: "npm install"
+      - run: "npm run build"
+
+  lint:
+    build:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+
+    runs-on: ${{matrix.os}
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: "Added linter to workflow"
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - run: "npm install"
+      - run: "npx eslint src/*.jsx"

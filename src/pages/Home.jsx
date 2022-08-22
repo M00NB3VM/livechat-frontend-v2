@@ -422,9 +422,8 @@ function Home() {
                     currently online in the same chat room as you.
                   </li>
                   <li>
-                    Private messages, "whispers", are temporary and will
-                    disappear if one of either sender or reciever exits the
-                    chat.
+                    Private messages, whispers, are temporary and will disappear
+                    if one of either sender or reciever exits the chat.
                   </li>
                   <li>
                     If a chat is deleted, so are the messages and can not be
@@ -434,7 +433,7 @@ function Home() {
                 <ul>
                   <li>Be kind and respectful</li>
                   <li>Stay on topic in the different chats</li>
-                  <li>Don't link to unsafe sites</li>
+                  <li>Do not link to unsafe sites</li>
                 </ul>
                 <h2 className="h2">
                   Start writing, share what you love and connect with others.
@@ -524,7 +523,6 @@ function Home() {
                 className="send-message-button"
                 onClick={() => {
                   handleMessage(currentRoom, whisperTo);
-                  latestMessage();
                 }}
               >
                 <img
@@ -546,6 +544,7 @@ function Home() {
                   {emojis.map((emoji) => {
                     return (
                       <li
+                        key={emoji.name}
                         className="emoji-li"
                         onClick={() => {
                           addEmoji(emoji.emoji);

@@ -23,17 +23,17 @@ jobs:
 
   lint:
     build:
-    strategy:
-      matrix:
-        os: [ubuntu-latest, windows-latest]
+      strategy:
+        matrix:
+          os: [ubuntu-latest, windows-latest]
 
-    runs-on: ${{matrix.os}
+      runs-on: ${{matrix.os}
 
-    steps:
-      - uses: actions/checkout@v3
-      - name: "Added linter to workflow"
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16
-      - run: "npm install"
-      - run: "npx eslint src/*.jsx"
+      steps:
+        - uses: actions/checkout@v3
+        - name: "Added linter to workflow"
+          uses: actions/setup-node@v3
+          with:
+            node-version: 16
+        - run: "npm install"
+        - run: "npx eslint src/*.jsx"

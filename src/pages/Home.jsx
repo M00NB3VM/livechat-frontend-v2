@@ -1,5 +1,4 @@
 import React from "react";
-import "dotenv/config";
 import { useEffect, useState } from "react";
 import { io } from "socket.io-client";
 import AddChat from "../components/AddChat";

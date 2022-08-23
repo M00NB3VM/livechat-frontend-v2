@@ -1,4 +1,5 @@
 import React from "react";
+import "dotenv/config";
 import { useEffect, useState } from "react";
 import { io } from "socket.io-client";
 import AddChat from "../components/AddChat";
@@ -57,7 +58,7 @@ function Home() {
   ];
 
   useEffect(() => {
-    socket = io("http://localhost:4000");
+    socket = io(process.env.REACT_APP_BACKEND_URL);
 
     socket.on("connect", () => {
       socket.emit("set_default_room");

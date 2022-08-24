@@ -261,7 +261,7 @@ pink #EEC6CA
 .background {
   height: 550px;
   margin-bottom: auto;
-  background-color: #e4ffef;
+  background-color: #bcf4de;
 }
 
 .scroll {
@@ -380,11 +380,6 @@ pink #EEC6CA
   margin: 0;
   padding: 0;
   font-size: 0.7rem;
-}
-
-.gif {
-  height: 15px;
-  width: 15px;
 }
 
 .emoji-picker {

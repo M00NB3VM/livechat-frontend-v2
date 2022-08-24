@@ -490,7 +490,6 @@ function Home() {
         {currentlyWriting ? (
           <div className="currently-writing">
             <p className="currently-writing-p">{writer} is writing</p>
-            <img src="./writing.gif" className="gif"></img>
           </div>
         ) : (
           <div className="currently-writing">

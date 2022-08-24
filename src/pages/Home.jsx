@@ -57,7 +57,7 @@ function Home() {
   ];
 
   useEffect(() => {
-    socket = io("https://cme-saga-livechat-server.herokuapp.com/");
+    socket = io("https://cme-saga-livechat-server.herokuapp.com");
 
     socket.on("connect", () => {
       socket.emit("set_default_room");

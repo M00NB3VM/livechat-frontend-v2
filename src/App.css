@@ -261,10 +261,7 @@ pink #EEC6CA
 .background {
   height: 550px;
   margin-bottom: auto;
-  background-image: url("./Hello.gif");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: bottom right;
+  background-color: #e4ffef;
 }
 
 .scroll {

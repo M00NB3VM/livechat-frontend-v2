@@ -115,7 +115,6 @@ function Home() {
     });
 
     socket.on("set_messages", (data) => {
-      console.log(data);
       if (data.length > 0) {
         const oldMessages = [];
         const obj = data;
@@ -500,6 +499,7 @@ function Home() {
         ) : (
           <div className="currently-writing">
             <p className="currently-writing-p"></p>
+            <img src="/writing.gif" className="gif"></img>
           </div>
         )}
 

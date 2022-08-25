@@ -262,6 +262,10 @@ pink #EEC6CA
   height: 550px;
   margin-bottom: auto;
   background-color: #bcf4de;
+  background-image: url("/Hello.gif");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom right;
 }
 
 .scroll {
@@ -382,12 +386,17 @@ pink #EEC6CA
   font-size: 0.7rem;
 }
 
+.gif {
+  height: 15px;
+  width: 15px;
+}
+
 .emoji-picker {
   height: 20px;
   width: 20px;
   border: none;
   background-color: transparent;
-  background-image: url(./emoji.png);
+  background-image: url(/emoji.png);
   background-repeat: no-repeat;
   background-size: contain;
   cursor: pointer;

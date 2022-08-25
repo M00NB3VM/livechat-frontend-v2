@@ -72,7 +72,7 @@ function Home() {
 
     socket.on("set_users", (data) => {
       console.log(data);
-      if (data) {
+      if (data.length > 0) {
         setUsers(data);
       }
     });

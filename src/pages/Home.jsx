@@ -71,7 +71,6 @@ function Home() {
     });
 
     socket.on("set_users", (data) => {
-      console.log(data);
       if (data.length > 0) {
         setUsers(data);
       } else {
@@ -84,7 +83,6 @@ function Home() {
     });
 
     socket.on("new_user", (username) => {
-      console.log(username);
       setUsername(username);
       setUser(username);
       setUserError(<p></p>);
@@ -117,24 +115,29 @@ function Home() {
     });
 
     socket.on("set_messages", (data) => {
-      const oldMessages = [];
-      const obj = data;
+      console.log(data);
+      if (data.length > 0) {
+        const oldMessages = [];
+        const obj = data;
 
-      for (let i = 0; i < obj.length; i++) {
-        const timeArray = obj[i].time.split(" ");
-        const hhmm = timeArray[0].split(":");
-        const dateArray = obj[i].date.split(" ");
+        for (let i = 0; i < obj.length; i++) {
+          const timeArray = obj[i].time.split(" ");
+          const hhmm = timeArray[0].split(":");
+          const dateArray = obj[i].date.split(" ");
 
-        const newMessage = {
-          username: obj[i].sender_id,
-          text: obj[i].message,
-          date: `${dateArray[1]} ${dateArray[2]} ${dateArray[3]}`,
-          time: `${hhmm[0]}:${hhmm[1]}`,
-        };
+          const newMessage = {
+            username: obj[i].sender_id,
+            text: obj[i].message,
+            date: `${dateArray[1]} ${dateArray[2]} ${dateArray[3]}`,
+            time: `${hhmm[0]}:${hhmm[1]}`,
+          };
 
-        oldMessages.push(newMessage);
+          oldMessages.push(newMessage);
+        }
+        setMessages(oldMessages);
+      } else {
+        return;
       }
-      setMessages(oldMessages);
     });
 
     socket.on("message", (data) => {

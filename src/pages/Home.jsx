@@ -82,6 +82,7 @@ function Home() {
     });
 
     socket.on("new_user", (username) => {
+      console.log(username);
       setUsername(username);
       setUser(username);
       setUserError(<p></p>);

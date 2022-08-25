@@ -1,1 +1,1 @@
-web: npx server
+web: npx serve

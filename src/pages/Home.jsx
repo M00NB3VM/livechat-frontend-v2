@@ -4,7 +4,7 @@ import { io } from "socket.io-client";
 import AddChat from "../components/AddChat";
 import "../App.css";
 
-let socket = io.connect();
+let socket;
 
 function Home() {
   const [users, setUsers] = useState([]);

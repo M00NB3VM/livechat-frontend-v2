@@ -66,8 +66,12 @@ function Home() {
     });
 
     socket.on("set_chats", (chats) => {
-      chats.sort((a, b) => a.name.localeCompare(b.name));
-      setChats(chats);
+      if (chats.length > 0) {
+        chats.sort((a, b) => a.name.localeCompare(b.name));
+        setChats(chats);
+      } else {
+        return;
+      }
     });
 
     socket.on("set_users", (data) => {
